@@ -1,4 +1,4 @@
 category: Graphics KDE Text
-requires: libchm0 libdjvulibre21 libepub0 libfreetype6 libgcc1 libkdecore5 libphonon4 libpoppler-qt4_3 libqca2 libqimageblitz4 libQt3Support4 libQtCore4 libQtDBus4 libQtGui4 libQtNetwork4 libQtSvg4 libQtXml4 libspectre1 libstdc++6 libtiff5 zlib0
+requires: libchm0 libdjvulibre21 libepub0 libfreetype6 libgcc1 libjpeg8 libkdecore5 libphonon4 libpoppler-qt4_3 libqca2 libqimageblitz4 libQtCore4 libQtDBus4 libQtGui4 libQtNetwork4 libQtSvg4 libQtXml4 libspectre1 libstdc++6 libtiff5 zlib0
 sdesc: "KDE document viewer"
 ldesc: "KDE graphics suite"
