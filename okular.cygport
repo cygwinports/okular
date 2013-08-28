@@ -1,0 +1,13 @@
+inherit kde4
+
+NAME="okular"
+VERSION=4.10.5
+RELEASE=1
+CATEGORY="Graphics"
+SUMMARY="KDE document viewer"
+DESCRIPTION="Part of the KDE graphics suite"
+
+PATCH_URI="
+	4.7.0-okular-config.patch
+	4.10.5-qml-module.patch
+"
