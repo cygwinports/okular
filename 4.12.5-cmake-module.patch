@@ -1,0 +1,11 @@
+--- origsrc/okular-4.12.5/CMakeLists.txt	2014-04-19 06:14:33.000000000 -0500
++++ src/okular-4.12.5/CMakeLists.txt	2014-04-30 23:54:06.225081900 -0500
+@@ -204,7 +204,7 @@ kde4_add_kcfg_files(okularpart_SRCS conf
+ 
+ qt4_add_dbus_interfaces(okularpart_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.KSpeech.xml)
+ 
+-kde4_add_plugin(okularpart SHARED ${okularpart_SRCS})
++kde4_add_plugin(okularpart ${okularpart_SRCS})
+ 
+ target_link_libraries(okularpart okularcore ${KDE4_KPARTS_LIBS} ${KDE4_KPRINTUTILS_LIBS} ${MATH_LIB} ${QIMAGEBLITZ_LIBRARIES} ${KDE4_PHONON_LIBRARY} ${KDE4_SOLID_LIBRARY})
+ 
