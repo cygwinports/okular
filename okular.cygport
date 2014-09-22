@@ -1,7 +1,7 @@
 inherit kde4
 
 NAME="okular"
-VERSION=4.12.5
+VERSION=4.13.3
 RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="KDE document viewer"
@@ -12,3 +12,8 @@ PATCH_URI="
 	4.10.5-qml-module.patch
 	4.12.5-cmake-module.patch
 "
+
+PKG_NAMES="${NAME} ${NAME}-devel"
+okular_CONTENTS="etc/ usr/bin/ usr/lib/kde4/ usr/share/"
+okular_devel_REQUIRES="libkdecore-devel"
+okular_devel_CONTENTS="usr/include/ usr/lib/cmake/ usr/lib/lib*.dll.a"
