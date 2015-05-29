@@ -14,6 +14,7 @@ PATCH_URI="
 "
 
 PKG_NAMES="${NAME} ${NAME}-devel"
+okular_REQUIRES="kde-runtime"
 okular_CONTENTS="etc/ usr/bin/ usr/lib/kde4/ usr/share/"
 okular_devel_REQUIRES="libkdecore-devel"
 okular_devel_CONTENTS="usr/include/ usr/lib/cmake/ usr/lib/lib*.dll.a"
