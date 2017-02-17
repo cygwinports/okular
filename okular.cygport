@@ -1,7 +1,7 @@
 inherit kde4
 
 NAME="okular"
-VERSION=15.04.3
+VERSION=16.08.3
 RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="KDE document viewer"
@@ -13,8 +13,37 @@ PATCH_URI="
 	4.12.5-cmake-module.patch
 "
 
-PKG_NAMES="${NAME} ${NAME}-devel"
-okular_REQUIRES="kde-runtime"
-okular_CONTENTS="etc/ usr/bin/ usr/lib/kde4/ usr/share/"
+PKG_NAMES="${NAME} ${NAME}4-part ${NAME}-devel"
+okular_REQUIRES="kde-runtime okular4-part"
+okular_CONTENTS="
+	etc/postinstall/okular.sh
+	usr/bin/okular.exe
+	usr/share/applications/kde4/okular*.desktop
+	usr/share/doc/HTML/en/okular/
+	usr/share/doc/okular/
+	usr/share/icons/hicolor/*/apps/okular.*
+	usr/share/man/man1/okular.1.gz
+"
+okular4_part_CONTENTS="
+	usr/bin/cygokularcore-7.dll
+	usr/lib/kde4/imports/org/kde/okular/
+	usr/lib/kde4/kio_msits.dll
+	usr/lib/kde4/okularGenerator_*.dll
+	usr/lib/kde4/okularpart.dll
+	usr/share/kde4/apps/kconf_update/okular.upd
+	usr/share/kde4/apps/okular/
+	usr/share/kde4/config.kcfg/*
+	usr/share/kde4/services/libokularGenerator_*.desktop
+	usr/share/kde4/services/msits.protocol
+	usr/share/kde4/services/okular*.desktop
+	usr/share/kde4/servicetypes/okularGenerator.desktop
+"
 okular_devel_REQUIRES="libkdecore-devel"
-okular_devel_CONTENTS="usr/include/ usr/lib/cmake/ usr/lib/lib*.dll.a"
+okular_devel_CONTENTS="
+	usr/include/kde4/okular/
+	usr/lib/cmake/Okular/
+	usr/lib/libokularcore.dll.a
+"
+PKG_IGNORE="
+	usr/share/applications/kde4/active-documentviewer_*
+"
