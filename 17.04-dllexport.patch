@@ -1,0 +1,21 @@
+--- origsrc/okular-17.04.3/core/synctex/synctex_parser_utils.c	2017-07-09 17:44:56.000000000 -0500
++++ src/okular-17.04.3/core/synctex/synctex_parser_utils.c	2017-07-14 17:18:22.816884900 -0500
+@@ -41,6 +41,7 @@ authorization from the copyright holder.
+ 
+ /*  In this file, we find all the functions that may depend on the operating system. */
+ 
++#define _DEFAULT_SOURCE
+ #include <synctex_parser_utils.h>
+ #include <stdlib.h>
+ #include <string.h>
+--- origsrc/okular-17.04.3/interfaces/viewerinterface.h	2017-07-09 17:44:56.000000000 -0500
++++ src/okular-17.04.3/interfaces/viewerinterface.h	2017-07-14 17:32:19.059144100 -0500
+@@ -11,7 +11,7 @@
+ #define _OKULAR_VIEWERINTERFACE_H_
+ 
+ #include "../core/okularcore_export.h"
+-#ifdef Q_OS_WIN
++#if defined(Q_OS_WIN) || defined(Q_OS_CYGWIN)
+ #define VIEWERINTERFACE_EXPORT __declspec(dllexport)
+ #else
+ #define VIEWERINTERFACE_EXPORT OKULARCORE_EXPORT

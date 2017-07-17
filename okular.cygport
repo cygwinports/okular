@@ -1,49 +1,54 @@
-inherit kde4
+inherit kf5
 
 NAME="okular"
-VERSION=16.08.3
+VERSION=17.04.3
 RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="KDE document viewer"
 DESCRIPTION="Part of the KDE graphics suite"
 
-PATCH_URI="
-	4.7.0-okular-config.patch
-	4.10.5-qml-module.patch
-	4.12.5-cmake-module.patch
-"
+PATCH_URI="17.04-dllexport.patch"
 
-PKG_NAMES="${NAME} ${NAME}4-part ${NAME}-devel"
-okular_REQUIRES="kde-runtime okular4-part"
+PKG_NAMES="${NAME} ${NAME}5-part ${NAME}-devel ${NAME}-mobile"
+okular_REQUIRES="okular5-part"
 okular_CONTENTS="
 	etc/postinstall/okular.sh
 	usr/bin/okular.exe
-	usr/share/applications/kde4/okular*.desktop
-	usr/share/doc/HTML/en/okular/
+	usr/share/applications/okular*.desktop
+	usr/share/applications/org.kde.okular.desktop
+	usr/share/doc/HTML/*/okular/
 	usr/share/doc/okular/
 	usr/share/icons/hicolor/*/apps/okular.*
 	usr/share/man/man1/okular.1.gz
+	usr/share/man/*/man1/okular.1.gz
+	usr/share/metainfo/org.kde.okular.appdata.xml
 "
-okular4_part_CONTENTS="
-	usr/bin/cygokularcore-7.dll
-	usr/lib/kde4/imports/org/kde/okular/
-	usr/lib/kde4/kio_msits.dll
-	usr/lib/kde4/okularGenerator_*.dll
-	usr/lib/kde4/okularpart.dll
-	usr/share/kde4/apps/kconf_update/okular.upd
-	usr/share/kde4/apps/okular/
-	usr/share/kde4/config.kcfg/*
-	usr/share/kde4/services/libokularGenerator_*.desktop
-	usr/share/kde4/services/msits.protocol
-	usr/share/kde4/services/okular*.desktop
-	usr/share/kde4/servicetypes/okularGenerator.desktop
+okular5_part_CONTENTS="
+	etc/xdg/okular.categories
+	usr/bin/cygOkular5Core-7.dll
+	usr/lib/qt5/plugins/kio_msits.dll
+	usr/lib/qt5/plugins/okular/generators/okularGenerator_*.dll
+	usr/lib/qt5/plugins/okularpart.dll
+	usr/lib/qt5/qml/org/kde/okular/
+	usr/share/config.kcfg/*
+	usr/share/kconf_update/okular.upd
+	usr/share/kservices5/ms-its.protocol
+	usr/share/kservices5/okular*.desktop
+	usr/share/kservicetypes5/okularGenerator.desktop
+	usr/share/kxmlgui5/okular/
+	usr/share/locale/*/LC_MESSAGES/okular*.mo
+	usr/share/metainfo/org.kde.okular-*.metainfo.xml
+	usr/share/okular/
 "
-okular_devel_REQUIRES="libkdecore-devel"
+okular_devel_REQUIRES=
 okular_devel_CONTENTS="
-	usr/include/kde4/okular/
-	usr/lib/cmake/Okular/
-	usr/lib/libokularcore.dll.a
+	usr/include/okular/
+	usr/lib/cmake/Okular5/
+	usr/lib/libOkular5Core.dll.a
 "
-PKG_IGNORE="
-	usr/share/applications/kde4/active-documentviewer_*
+okular_mobile_REQUIRES="libKF5Declarative5 okular5-part"
+okular_mobile_CONTENTS="
+	usr/share/applications/org.kde.mobile.okular*.desktop
+	usr/share/kpackage/genericqml/org.kde.mobile.okular/
+	usr/share/locale/*/LC_MESSAGES/org.kde.active.documentviewer.mo
 "
