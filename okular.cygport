@@ -1,7 +1,7 @@
 inherit kf5
 
 NAME="okular"
-VERSION=17.04.3
+VERSION=17.08.3
 RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="KDE document viewer"
@@ -51,4 +51,7 @@ okular_mobile_CONTENTS="
 	usr/share/applications/org.kde.mobile.okular*.desktop
 	usr/share/kpackage/genericqml/org.kde.mobile.okular/
 	usr/share/locale/*/LC_MESSAGES/org.kde.active.documentviewer.mo
+"
+PKG_IGNORE="
+	usr/lib/qt5/plugins/libokularpart.dll.a
 "
