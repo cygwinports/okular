@@ -1,0 +1,10 @@
+--- origsrc/okular-17.12.3/core/synctex/synctex_parser.c	2018-03-01 16:55:44.000000000 -0600
++++ src/okular-17.12.3/core/synctex/synctex_parser.c	2018-03-13 02:20:58.742140000 -0500
+@@ -95,6 +95,7 @@
+ #       endif
+ #   endif
+ 
++#define _GNU_SOURCE
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>

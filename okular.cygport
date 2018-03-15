@@ -1,13 +1,16 @@
 inherit kf5
 
 NAME="okular"
-VERSION=17.08.3
+VERSION=17.12.3
 RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="KDE document viewer"
 DESCRIPTION="Part of the KDE graphics suite"
 
-PATCH_URI="17.04-dllexport.patch"
+PATCH_URI="
+	17.04-dllexport.patch
+	17.12-ftm.patch
+"
 
 PKG_NAMES="${NAME} ${NAME}5-part ${NAME}-devel ${NAME}-mobile"
 okular_REQUIRES="okular5-part"
@@ -25,7 +28,7 @@ okular_CONTENTS="
 "
 okular5_part_CONTENTS="
 	etc/xdg/okular.categories
-	usr/bin/cygOkular5Core-7.dll
+	usr/bin/cygOkular5Core-8.dll
 	usr/lib/qt5/plugins/kio_msits.dll
 	usr/lib/qt5/plugins/okular/generators/okularGenerator_*.dll
 	usr/lib/qt5/plugins/okularpart.dll
